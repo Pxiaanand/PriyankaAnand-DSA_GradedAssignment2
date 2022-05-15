@@ -25,7 +25,7 @@ public class buildingSkyScraper {
 		n=in.nextInt();
 		System.out.println("Enter the Floor sizes of the Building :");
 		int[] arr = new int[n];
-		int[] arr_unused_popped = new int[n];
+		int[] arr_unused_popped = new int[n]; // Integer array to store the popped Floor sizes
 		for(i=0;i<n;i++)
 		{
 			floorsize=in.nextInt();
@@ -33,14 +33,14 @@ public class buildingSkyScraper {
 			arr[i]=floorsize;
 		}
 		Arrays.sort(arr);
-		System.out.println(Arrays.toString(arr));
+		//System.out.println(Arrays.toString(arr));
 		
 		//Sorting the Queue and storing it in Another Queue in Descending Order
 		for(i=n-1;i>=0;i--)
 		{
 			sorted_qu.add(arr[i]);
 		}
-		System.out.println(sorted_qu);
+		//System.out.println(sorted_qu);
 		max_floor_size=sorted_qu.remove();
 		boolean ground_floor_flag=false;
 		
@@ -75,7 +75,7 @@ public class buildingSkyScraper {
 		    			if(arr_unused_popped[j]==max_floor_size)
 		    			{
 		    				System.out.print(max_floor_size+" ");
-		    				if(!sorted_qu.isEmpty())
+		    				if(!sorted_qu.isEmpty())				//Finding the final(top most) floor
 		    				{
 		    					max_floor_size=sorted_qu.remove();
 			    				j=0;
